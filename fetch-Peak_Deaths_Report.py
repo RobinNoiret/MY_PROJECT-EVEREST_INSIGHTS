@@ -78,8 +78,11 @@ while current_start_date <= end_date:
     # Passer à la période suivante
     current_start_date = current_end_date + timedelta(days=1)
 
+if not os.path.exists('Data_JSON'):
+    os.makedirs('Data_JSON')
+
 # Écrire les résultats dans un fichier JSON
-with open('results.json', 'w', encoding='utf-8') as f:
+with open('Data_JSON/deaths.json', 'w', encoding='utf-8') as f:
     json.dump(all_results, f, ensure_ascii=False, indent=4)
 
 print("Les résultats ont été écrits dans 'results.json'.")
