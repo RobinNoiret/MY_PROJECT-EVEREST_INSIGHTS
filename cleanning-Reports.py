@@ -2,13 +2,13 @@ from Functions.libs import *
 from variables import *
 
 # Charger les données JSON existantes
-file_path = submit_path
+file_path = expedition_path
 with open(file_path, 'r', encoding='utf-8') as f:
     raw_data = json.load(f)
 
 # Titres des champs
     #field_titles = field_deaths_titles
-    field_titles = field_submit_titles
+    field_titles = field_expedition_titles
 
 # Structure pour stocker les résultats nettoyés
 cleaned_data = []
@@ -22,7 +22,7 @@ temp_entry = []
 # Parcourir les données brutes
 for record in raw_data:
     for entry in record:
-        if entry and sWord1 not in entry and sWord2 not in entry:
+        if entry and eWord1 not in entry and eWord2 not in entry:
             # Détecter le début d'un nouvel enregistrement
             if entry.startswith("EVER"):
                 # Ajouter l'entrée précédente si elle est complète
@@ -51,7 +51,7 @@ for record in raw_data:
             seen_entries.add(entry_tuple)
 
 # Écrire les résultats dans un nouveau fichier JSON formaté
-with open('Data_JSON/cleaned_submit.json', 'w', encoding='utf-8') as f:
+with open('Data_JSON/cleaned_expedition.json', 'w', encoding='utf-8') as f:
     json.dump(cleaned_data, f, ensure_ascii=False, indent=4)
 
-print("Les résultats nettoyés avec titres des champs ont été écrits dans 'cleaned_submit.json'.")
+print("Les résultats nettoyés avec titres des champs ont été écrits dans 'cleaned_expedition.json'.")

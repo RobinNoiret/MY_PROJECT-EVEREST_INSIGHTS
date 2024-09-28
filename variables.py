@@ -85,3 +85,41 @@ submit_path = "Data_JSON/submit_2024-09-27_21-00-23.json"
 field_submit_titles = ["Peak", "Name", "Yr/Seas", "Date", "Time", "Citizenship", "Sex", "Age", "Oxy", "Death", "Host"]
 sWord1 = "Peak Ascents"
 sWord2 = "ReportPeak ID"
+
+#____________________________________________________________________________________________________________
+#                                           Fetch Expedition Report
+#____________________________________________________________________________________________________________
+
+# Endpoint of submit report
+expedition_url = "https://www.himalayandatabase.com/scripts/peakexp.php"
+
+# Forms information
+expedition_data = {
+
+    'Peak_ID': 'EVER',     # Peak Everest
+    'Pk_Year1': '',
+    'Pk_Year2': '',
+    'Season': '0',
+    'Pk_Nation': '',
+    'Host': '0'
+}
+
+# Submit header
+expedition_header = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'Accept-Encoding': 'gzip, deflate, br, zstd',
+    'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+    'Cache-Control': 'max-age=0',
+    'Connection': 'keep-alive',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Host': 'www.himalayandatabase.com',
+    'Origin': 'https://www.himalayandatabase.com',
+    'Referer': 'https://www.himalayandatabase.com/Online/peakexp.html',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+}
+
+# file path of submit report
+expedition_path = "Data_JSON/submit_2024-09-27_21-00-23.json"
+field_expedition_titles = ["Peak", "Name", "Yr/Seas", "Date", "Time", "Citizenship", "Sex", "Age", "Oxy", "Death", "Host"]
+eWord1 = "Peak Expeditions"
+eWord2 = "ReportPeak ID"
