@@ -39,7 +39,6 @@ deaths_header = {
 }
 
 # file path of deaths report
-deaths_path = "Data_JSON/deaths_2024-09-16_12-06-32.json"
 field_deaths_titles = ["Peak", "Name", "Yr/Seas", "Date", "Time", "Citizenship", "Sex", "Age", "Oxy", "Smt", "Cause of Death"]
 dWord1 = "Death Count"
 dWord2 = "Peak Deaths Report"
@@ -81,7 +80,6 @@ submit_header = {
 }
 
 # file path of submit report
-submit_path = "Data_JSON/submit_2024-09-27_21-00-23.json"
 field_submit_titles = ["Peak", "Name", "Yr/Seas", "Date", "Time", "Citizenship", "Sex", "Age", "Oxy", "Death", "Host"]
 sWord1 = "Peak Ascents"
 sWord2 = "ReportPeak ID"
@@ -119,7 +117,6 @@ expedition_header = {
 }
 
 # file path of submit report
-expedition_path = "Data_JSON/submit_2024-09-27_21-00-23.json"
 field_expedition_titles = ["Peak", "Name", "Yr/Seas", "Date", "Time", "Citizenship", "Sex", "Age", "Oxy", "Death", "Host"]
 eWord1 = "Peak Expeditions"
 eWord2 = "ReportPeak ID"
