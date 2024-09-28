@@ -2,11 +2,11 @@ from Functions.libs import *
 from Functions.fetch_pages import fetch_page
 from Functions.parse_resultas import parse_results
 from variables import *
-from fetch_Peak_Deaths_Report import fetch_peak_deaths_report
-from fetch_Peak_Expedition_Report import fetch_peak_expedition_report
-from fetch_Peak_Submit_Report import fetch_peak_submit_report
+from Functions.fetch_Peak_Deaths_Report import fetch_peak_deaths_report
+from Functions.fetch_Peak_Expedition_Report import fetch_peak_expedition_report
+from Functions.fetch_Peak_Submit_Report import fetch_peak_submit_report
 from Functions.check_file import check_file_age
-from cleanning_Reports import clean_data
+from Functions.cleanning_Reports import clean_data
 
 # ________________________________________________________________________________________________________________
 # _____________________________________________   Fetching Reports   _____________________________________________
@@ -53,6 +53,7 @@ print("____________________________________________________")
 print("                    Cleaning Data                    ")
 print("____________________________________________________")
 
+print("Cleaning Deaths Report")
 file_path = max(glob.glob("Data_JSON/deaths_*.json"), key=os.path.getctime)
 field_titles = field_deaths_titles
 word1 = dWord1
@@ -60,6 +61,7 @@ word2 = dWord2
 output_path = "Data_JSON/cleaned_deaths.json"
 clean_data(file_path, field_titles, word1, word2, output_path)
 
+print("Cleaning Submit Report")
 file_path = max(glob.glob("Data_JSON/submit_*.json"), key=os.path.getctime)
 field_titles = field_submit_titles
 word1 = sWord1
@@ -67,6 +69,7 @@ word2 = sWord2
 output_path = "Data_JSON/cleaned_submit.json"
 clean_data(file_path, field_titles, word1, word2, output_path)
 
+print("Cleaning Expedition Report")
 #file_path = max(glob.glob("Data_JSON/expedition_*.json"), key=os.path.getctime) #Ne fonctionne pas car ne commence pas par EVER
 #field_titles = field_expedition_titles
 #word1 = eWord1
